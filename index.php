@@ -12,11 +12,11 @@
 
         <form action="traitement.php" method="POST">
             <input type="hidden">
-            <input type="text" placeholder="Nom">
-            <input type="text" placeholder="Prenom">
+            <input type="text" placeholder="Nom"><br>
+            <input type="text" placeholder="Prenom"><br>
             <select name="" id="">
                 <option value="">filter_id</option>
-            </select>
+            </select><br>
         </form>
     </div>
 </body>

@@ -7,16 +7,17 @@
     <script src="assets/js//script.js"></script>
 </head>
 <body>
-    <div>
+    <div id="BE">
         <h2>Gestion des Etudiants</h2><br>
 
         <form action="traitement.php" method="POST">
-            <input type="hidden">
-            <input type="text" placeholder="Nom"><br>
-            <input type="text" placeholder="Prenom"><br>
-            <select name="" id="">
-                <option value="">filter_id</option>
+            <input type="hidden" name="id">
+            <input type="text" placeholder="Nom" name="nom"><br>
+            <input type="text" placeholder="Prenom" name="prenom"><br>
+            <select name="fil" id="">
+                <option selected disabled value="">filter_id</option>
             </select><br>
+            <input type="submit" name="btn" value="ajouter">
         </form>
     </div>
 </body>

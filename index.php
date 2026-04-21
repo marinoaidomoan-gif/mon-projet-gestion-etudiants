@@ -1,7 +1,6 @@
 <?php
+    require_once 'config/database.php';
     $id="";$nom="";$prenom="";$fil="";
-    $db = new PDO('mysql:host=127.0.0.1;dbname=gestion_etudiants', 'root', '');
-	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if(isset($_POST['btn']) && $_POST['btn']=="ajouter"){
 		$db->query('INSERT INTO etudiants(nom,prenom,filiere_id) VALUES("'.$_POST['nom'].'","'.$_POST['prenom'].'","'.$_POST['fil'].'")');

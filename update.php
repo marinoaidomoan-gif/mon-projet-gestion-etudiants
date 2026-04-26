@@ -11,15 +11,20 @@ if($_POST) {
     header('Location: index.php');
 }
 ?>
+<div class="container">
+    <div id="BE">
+        <h2>Mofification Etudiant</h2><br>
 
-<form method="POST">
-    <input name="nom" value="<?= $etudiant['nom'] ?>">
-    <input name="prenom" value="<?= $etudiant['prenom'] ?>">
-    <select name="fil">
-        <?php while($f = $filieres->fetch()): ?>
-            <option value="<?= $f['id'] ?>" <?= $f['id']==$etudiant['filiere_id']?'selected':'' ?>><?= $f['nom'] ?></option>
-        <?php endwhile; ?>
-    </select>
-    <button type="submit">Modifier</button>
-    <a href="index.php">Annuler</a>
-</form>
+        <form method="POST">
+            <input name="nom" value="<?= $etudiant['nom'] ?>">
+            <input name="prenom" value="<?= $etudiant['prenom'] ?>">
+            <select name="fil">
+                <?php while($f = $filieres->fetch()): ?>
+                    <option value="<?= $f['id'] ?>" <?= $f['id']==$etudiant['filiere_id']?'selected':'' ?>><?= $f['nom'] ?></option>
+                <?php endwhile; ?>
+            </select>
+            <input type="submit" value="modifier">
+            <a href="index.php">Annuler</a>
+        </form>
+    </div>
+</div>

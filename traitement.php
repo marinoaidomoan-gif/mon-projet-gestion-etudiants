@@ -24,20 +24,24 @@
 
 ?>
 <?php
+    echo'<div class="table-container">';
+    
 	echo'<table border="1" width="1000">';
+    echo'<h2>Traitements des Etudiants</h2><br>';
 	if($reqe->rowcount() != 0){
-		echo'<tr><th>Nom</th><th>Prenom</th><th>id Filiere</th><th>&nbsp</th></tr>';
+		echo'<tr><th>Nom</th><th>Prenom</th><th>id Filiere</th><th colspan="2">Action</th></tr>';
 		while($dt=$reqe->fetch()){
 			echo'<tr>';
 			echo'<td>'.$dt['nom'].'</td>';
 			echo'<td>'.$dt['prenom'].'</td>';
 			echo'<td>'.$dt['filiere_id'].'</td>';
-			echo '<td><a href="index.php?task=supp&key='.$dt['id'].'" onclick="return confirmSuppression()">supprimer</a></td>';
-            echo '<td><a href="update.php?id='.$dt['id'].'">modifier</a></td>';
+			echo '<td class="btn-supprimer"><a href="index.php?task=supp&key='.$dt['id'].'" onclick="return confirmSuppression()">supprimer</a></td>';
+            echo '<td class="btn-modifier"><a href="update.php?id='.$dt['id'].'">modifier</a></td>';
 			echo'</tr>';
 		}
 	}else{
 		echo'<tr><td height="50" align="center">Votre tableau est vide</td></tr>';
 	}
 	echo'</table>';
+    echo'</div>';
 ?>

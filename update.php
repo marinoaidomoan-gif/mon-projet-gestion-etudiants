@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="assets/css/style.css">
+<?php
+require_once 'config/database.php';
+
+$id = $_GET['id'];
+$etudiant = $db->query("SELECT * FROM etudiants WHERE id = $id")->fetch();
+$filieres = $db->query("SELECT * FROM filieres");
+
+if($_POST) {
+    $db->query("UPDATE etudiants SET nom='{$_POST['nom']}', prenom='{$_POST['prenom']}', filiere_id='{$_POST['fil']}' WHERE id=$id");
+    header('Location: index.php');
+}
+?>
+
+<form method="POST">
+    <input name="nom" value="<?= $etudiant['nom'] ?>">
+    <input name="prenom" value="<?= $etudiant['prenom'] ?>">
+    <select name="fil">
+        <?php while($f = $filieres->fetch()): ?>
+            <option value="<?= $f['id'] ?>" <?= $f['id']==$etudiant['filiere_id']?'selected':'' ?>><?= $f['nom'] ?></option>
+        <?php endwhile; ?>
+    </select>
+    <button type="submit">Modifier</button>
+    <a href="index.php">Annuler</a>
+</form>

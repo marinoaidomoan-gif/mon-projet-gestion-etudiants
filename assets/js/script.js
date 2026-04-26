@@ -28,3 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function confirmSuppression() {
+    return confirm("Voulez-vous vraiment supprimer cet étudiant ?");
+}

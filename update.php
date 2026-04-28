@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js//script.js"></script>
 <?php
 require_once 'config/database.php';
 

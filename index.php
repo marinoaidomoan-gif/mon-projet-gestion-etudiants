@@ -41,7 +41,7 @@
             <input type="text" placeholder="Nom" name="nom" value="<?=$nom ?>"><br>
             <input type="text" placeholder="Prenom" name="prenom" value="<?=$prenom ?>"><br>
             <select name="fil" id="">
-                <option selected disabled value="">filter_id</option>
+                <option selected disabled value="">filier_id</option>
                 <?php while($row = $filieres->fetch()): ?>
 			        <option value="<?= $row['id'] ?>"><?= $row['nom'] ?></option>
 		        <?php endwhile; ?>
